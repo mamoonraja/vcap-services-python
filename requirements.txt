@@ -1,0 +1,11 @@
+# test dependencies
+pytest>=2.8.2
+python_dotenv>=0.1.5;
+pylint>=1.4.4
+
+# code coverage
+coverage<5
+codecov>=1.6.3
+pytest-cov>=2.2.1
+
+bumpversion>=0.5.3
