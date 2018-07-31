@@ -1,1 +1,1 @@
-from .index import load_from_vcap_services, parse_credentials_from_file, get_creds_for_starter
+from .index import load_from_vcap_services, parse_credentials, get_credentials_from_file
