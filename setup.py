@@ -62,7 +62,7 @@ class PyTest(TestCommand):
 
 setup(name='vcap_services',
       version=__version__,
-      description='Client library to use VCAP SERVICES',
+      description='Client library to parse and return service credentials from environment variables that IBM Cloud provides.',
       license='Apache 2.0',
       author='Mamoon Raja',
       author_email='mamoon.raja@.ibm.com',

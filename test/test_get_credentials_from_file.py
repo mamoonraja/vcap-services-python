@@ -1,4 +1,6 @@
-from vcap_services import parse_credentials, load_from_vcap_services, get_credentials_from_file
+import os
+import json
+from vcap_services import get_credentials_from_file
 
 dummy_VCAP_creds = {'username': 'Mo', 'password': 'Salah'}
 dummy_file_creds = {'watson_discovery_username': 'Leo', 'watson_discovery_password': 'Messi', 'some_other_password': 'Ramos'}
@@ -16,4 +18,6 @@ def test_creds_from_file():
     assert get_credentials_from_file('discovery', {}) == {}
 
 def test_kube_creds():
+    os.environ['service_watson_visual_recognition'] = json.dumps(dummy_kube_creds)
     assert get_credentials_from_file('visual_recognition') == dummy_kube_creds
+    del os.environ['service_watson_visual_recognition']

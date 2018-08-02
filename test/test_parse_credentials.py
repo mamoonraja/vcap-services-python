@@ -1,4 +1,3 @@
-import os
 from vcap_services import parse_credentials
 
 dummy_file_creds = {'watson_discovery_username': 'Leo', 'watson_discovery_password': 'Messi', 'some_other_password': 'Ramos'}

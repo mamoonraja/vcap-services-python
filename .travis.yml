@@ -4,9 +4,12 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+addons:
+  apt_packages:
+    - pandoc
 # command to install dependencies
 before_install:
-  - cp .env.example .env
+  - cp .env.mock .env
 install:
   - pip install tox-travis
   - pip install bumpversion
