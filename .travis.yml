@@ -19,11 +19,10 @@ script:
   - pip install -U python-dotenv
   - tox
 deploy:
-  matrix:
   - provider: script
     script: npx semantic-release
     skip_cleanup: true
-  - provider: pypitest
+  - provider: pypi
     user: $PYPI_USERNAME
     password: $PYPI_PASSWORD
     repository: https://test.pypi.org/legacy
