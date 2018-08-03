@@ -1,7 +1,7 @@
 # vcap_service_python
 
 [![Build Status](https://travis-ci.org/mamoonraja/vcap-services-python.svg?branch=master)](https://travis-ci.org/mamoonraja/vcap-services-python/)
-[![Coverage Status](https://coveralls.io/repos/mamoonraja/vcap-services-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/mamoonraja/vcap-services-python?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mamoonraja/vcap-services-python/badge.svg?branch=master)](https://coveralls.io/github/mamoonraja/vcap-services-python?branch=master)
 
 Parse and return service credentials from environment variables that [IBM Cloud] provides.
 
