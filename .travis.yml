@@ -1,0 +1,39 @@
+language: python
+python:
+  - '2.7'
+  - '3.4'
+  - '3.5'
+  - '3.6'
+addons:
+  apt_packages:
+    - pandoc
+before_install:
+  - cp .env.mock .env
+  - npm install npm@latest -g
+install:
+  - pip install tox-travis
+  - pip install bumpversion
+  - pip install -r requirements.txt
+  - npm install @semantic-release/exec
+script:
+  - pip install -U python-dotenv
+  - tox
+deploy:
+  matrix:
+  - provider: script
+    script: npx semantic-release
+    skip_cleanup: true
+  - provider: pypitest
+    user: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
+    repository: https://test.pypi.org/legacy
+    skip_cleanup: true
+    on:
+      python: '2.7'
+  - provider: pypi
+    user: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
+    repository: https://upload.pypi.org/legacy
+    skip_cleanup: true
+    on:
+      python: '2.7'
