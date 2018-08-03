@@ -23,10 +23,16 @@ deploy:
   - provider: script
     script: npx semantic-release
     skip_cleanup: true
+  - provider: pypitest
+    user: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
+    repository: https://test.pypi.org/legacy
+    skip_cleanup: true
+    on:
+      python: '2.7'
   - provider: pypi
-    user: mamoonraja
-    password:
-      secure: DHB0BKMLg0HwDypKem4QxaiftNaZ/949lsfQXvPyGKRm0FkyD+yymdSRbxdm1wJVOSTl36zknqQVVBlG+PFjOWEjDyBSftaL4m9l8psgDOfb9FRpyyG9TMatFQRTDu8wYt/ex4yk3x/kmXoFpcP8z4Ra+2VijUpas5vLieJwhdTVs+sSwts69eYWlC8+JrS1mSr3woAg+U24xYvbTAsr7WtGmlZ6Wt0yObEqTjyn61Lnf1J3hEmjgBL74fMlqK0oaRwCeVEB0Yz/XiMjIJi2q8Zkzg3HIPPBCr/PEa6RYu2qd3jSNt6i80RdLEUHTcetYgPGw9LC+42KDzW/SgCToarQQO0Fp4konFaEwpeWvF3uYPNbIZyzPsfDgGJtqbIIUWuZUxrFbQ2p2YmIxUpdA42pvvqL+K/FzW8trM1qfb02h+kGC113WlmtUvqtTs2B8a/DFOmuiVw3VVBTiUoxmmUoGgpWSbL7rzf7wy7scKnS6ewm5NTC1FRSERR/W9SnUY61AFFs0tlEB/UCN7pWKIoxK2pp9n8H5qDDRdg0vzxzGdvdnCh9iEoKEfbUkQas5fkzz5StOo2I0o5BnYmPJOnfd4IugH+7pVvCHD+6UyLiO1I/v3slCcMdb3JagGUhi8DokqOsxj8aEISD5EMFc5AxKMoOgTtm7tuZV/0DStc=
+    user: $PYPI_USERNAME
+    password: $PYPI_PASSWORD
     repository: https://upload.pypi.org/legacy
     skip_cleanup: true
     on:
